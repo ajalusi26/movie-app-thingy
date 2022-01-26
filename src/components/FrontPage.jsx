@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Route } from "react-router-dom"
 
 //import components
 import MovieContainer from "./MovieContainer";
@@ -33,9 +33,8 @@ function FrontPage(){
   if(userLoaded){
     return(
       <>
-        <h1 style={{color: "white"}}>{currentUser.username}</h1>
-        <button onClick={logout}>LOG OUT</button>
-        <MovieContainer changeLoaded={changeLoaded} moviesLoaded={moviesLoaded}/>
+        
+        <MovieContainer changeLoaded={changeLoaded} moviesLoaded={moviesLoaded} currentUser={currentUser} logout={logout} />
         
       </>
   )

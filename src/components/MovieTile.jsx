@@ -6,8 +6,8 @@ function MovieTile({movie}){
             <img src={movie.imgUrl}></img>
             <p className="title">{movie.Name}</p>
             <span>
-                <button>Add to Favorites</button>
-                <button>Watch Later</button>
+                <button id={movie.id}>Add to Favorites</button>
+                <button id={movie.id}>Watch Later</button>
             </span>
         </div>
     )

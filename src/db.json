@@ -4,16 +4,19 @@
       "username": "OhhhhThatGuy",
       "password": "12345678",
       "email": "Ajalusi26@gmail.com",
+      "favorites": [],
+      "watchLater": [],
       "id": 1
     },
     {
       "username": "12345678",
       "password": "12345678",
       "email": "Ajalusi26@gmail.com",
+      "favorites": [],
+      "watchLater": [],
       "id": 2
     }
   ],
-
   "movies": [
     {
       "id": "0111161",
@@ -44,12 +47,6 @@
       "Name": "The Lord of the Rings: The Return of the King",
       "imgUrl": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY67_CR0",
       "Rating": "8.9"
-    },
-    {
-      "id": "0120737",
-      "Name": "The Lord of the Rings: The Fellowship of the Ring",
-      "imgUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UY67_CR0",
-      "Rating": "8.8"
     },
     {
       "id": "0060196",

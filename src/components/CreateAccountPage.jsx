@@ -13,7 +13,10 @@ function CreateAccountPage({addNewAccount}){
         let newUser = {
             username: username,
             password: password,
-            email: email
+            email: email,
+            favorites: [],
+            watchLater: []
+
         }
     console.log(newUser)
 
