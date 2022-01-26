@@ -11,9 +11,9 @@ function NavBar({currentUser, logout, setTab}){
                     <h4>{`Hello, ${currentUser.username}`}</h4>
                 </div>
                 <ul className="nav-links">
-                    <li value={'all'} onClick={(e) => setTab(e.target.value)}>All</li>
-                    <li value={'favorites'} onClick={(e) => setTab(e.target.value)}>My Favorites</li>
-                    <li value={'watchLater'} onClick={(e) => setTab(e.target.value)}>Watch Later</li>
+                    <li id='all' onClick={(e) => setTab(e.target.id)}>All</li>
+                    <li id='favorites' onClick={(e) => setTab(e.target.id)}>My Favorites</li>
+                    <li id='watch-later' onClick={(e) => setTab(e.target.id)}>Watch Later</li>
                     <li>My Account</li>
                 </ul>
             </nav>
