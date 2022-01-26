@@ -14,7 +14,7 @@ function NavBar({currentUser, logout, setTab}){
                     <li id='all' onClick={(e) => setTab(e.target.id)}>All</li>
                     <li id='favorites' onClick={(e) => setTab(e.target.id)}>My Favorites</li>
                     <li id='watch-later' onClick={(e) => setTab(e.target.id)}>Watch Later</li>
-                    <li onClick={logout}>Log Out</li>
+                    <li onClick={logout} id="logout">Log Out</li>
                 </ul>
             </nav>
         </>
