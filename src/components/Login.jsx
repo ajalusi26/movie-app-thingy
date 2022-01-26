@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import {Link, useNavigate} from "react-router-dom"
+import '../AllCss/LoginPage.css'
 
 function Login({allUsers, setUser}){
     const [username, setUsername] = useState("")
@@ -40,18 +41,20 @@ function Login({allUsers, setUser}){
     
     }else{
         return(
-            <div className='bg-layer'>
-            <div className="login">
-                <form onSubmit={handleSubmit} >
-                    <h1>Login</h1>
-                    <input type={"text"} name="username" placeholder="Username" value={username} onChange={(e)=> setUsername(e.target.value)}></input>
-                    <input type={"password"} name="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)}></input>
-                    <input type={"submit"} value="Login"></input>
-                </form>
-                <br></br>
-                <br></br>
-                <Link to={"/createAccount"} className="link">Dont have an account? Click here to create one!</Link>
-            </div>
+            <div className="sign-in-background">
+                <div className='bg-layer'>
+                    <div className="login">
+                        <form onSubmit={handleSubmit} >
+                            <h1>Login</h1>
+                            <input type={"text"} name="username" placeholder="Username" value={username} onChange={(e)=> setUsername(e.target.value)}></input>
+                            <input type={"password"} name="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)}></input>
+                            <input type={"submit"} value="Login"></input>
+                        </form>
+                        <br></br>
+                        <br></br>
+                        <Link to={"/createAccount"} className="link">Dont have an account? Click here to create one!</Link>
+                    </div>
+                </div>
             </div>
         )
     }

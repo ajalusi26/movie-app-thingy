@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import {useNavigate} from "react-router-dom"
+import '../AllCss/LoginPage.css'
 
 function CreateAccountPage({addNewAccount}){
     const [email, setEmail] = useState("")
@@ -50,14 +51,18 @@ function CreateAccountPage({addNewAccount}){
 
 
     return(
-        <div className="login">
-            <form onSubmit={createAccount}>
-                <h1>Create Account</h1>
-                <input type={"text"} name="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} ></input>
-                <input type={"text"} name="username" value={username} placeholder="Username" onChange={(e) => setUsername(e.target.value)} ></input>
-                <input type={"password"} name="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} ></input>
-                <input type={"submit"} value="Create Account"></input>
-            </form>
+        <div className="sign-in-background">
+            <div className="bg-layer">
+                <div className="login">
+                    <form onSubmit={createAccount}>
+                        <h1>Create Account</h1>
+                        <input type={"text"} name="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} ></input>
+                        <input type={"text"} name="username" value={username} placeholder="Username" onChange={(e) => setUsername(e.target.value)} ></input>
+                        <input type={"password"} name="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} ></input>
+                        <input type={"submit"} value="Create Account"></input>
+                    </form>
+                </div>
+            </div>
         </div>
     )
 }
