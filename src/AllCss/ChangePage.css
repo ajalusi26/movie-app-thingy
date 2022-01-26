@@ -1,0 +1,11 @@
+.arrow-container {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  align-items: center;
+  min-width: 8vh;
+  margin: 0;
+  padding: 0;
+}
+.arrows {
+}

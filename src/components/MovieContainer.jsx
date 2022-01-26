@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import Search from "./Search";
 import MovieTile from "./MovieTile";
 import '../AllCss/MovieContainer.css'
+import ChangePage from "./ChangePage";
 
 function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
     // All States
@@ -51,19 +52,21 @@ function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
                     case 'all':
                         return(
                             <>
-                                <NavBar setTab={setTab} currentUser={currentUser} logout={logout}/>
+                                <NavBar setTab={setTab} currentUser={currentUser} logout={logout} setMoviesToDisplay={setMoviesToDisplay}/>
                                 <Search setSearchValue={setSearchValue}/>
                                 <div className="movie-container">
                                     {filteredMovies.slice(moviesToDisplay, moviesToDisplay + 48)
                                     .map(movie => <MovieTile movie={movie} key={movie.id} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} setWatchLater={setWatchLater} watchLater={watchLater}/>)}
                                     {console.log(favoriteMovies)}
+                                   
                                 </div>
+                                <ChangePage setMoviesToDisplay={setMoviesToDisplay} moviesToDisplay={moviesToDisplay}/>
                             </>  
                         )
                     case 'favorites':
                         return(
                             <>
-                                <NavBar setTab={setTab} currentUser={currentUser} logout={logout}/>
+                                <NavBar setTab={setTab} currentUser={currentUser} logout={logout} setMoviesToDisplay={setMoviesToDisplay}/>
                                 <div className="movie-container">
                                 {favoriteMovies.slice(moviesToDisplay, moviesToDisplay + 48)
                                     .map(movie => <MovieTile movie={movie} key={movie.id} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} setWatchLater={setWatchLater} watchLater={watchLater}/>)}
@@ -75,7 +78,7 @@ function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
                     case 'watch-later':
                         return(
                             <>
-                                <NavBar setTab={setTab} currentUser={currentUser} logout={logout}/>
+                               <NavBar setTab={setTab} currentUser={currentUser} logout={logout} setMoviesToDisplay={setMoviesToDisplay}/>
                                 <div className="movie-container">
                                 {moviesWatchLater.slice(moviesToDisplay, moviesToDisplay + 48)
                                     .map(movie => <MovieTile movie={movie} key={movie.id} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} setWatchLater={setWatchLater} watchLater={watchLater}/>)}
