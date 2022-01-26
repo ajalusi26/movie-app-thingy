@@ -56,9 +56,7 @@ function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
                                 <Search setSearchValue={setSearchValue}/>
                                 <div className="movie-container">
                                     {filteredMovies.slice(moviesToDisplay, moviesToDisplay + 48)
-                                    .map(movie => <MovieTile movie={movie} key={movie.id} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} setWatchLater={setWatchLater} watchLater={watchLater}/>)}
-                                    {console.log(favoriteMovies)}
-                                   
+                                    .map(movie => <MovieTile movie={movie} key={movie.id} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} setWatchLater={setWatchLater} watchLater={watchLater}/>)}               
                                 </div>
                                 <ChangePage setMoviesToDisplay={setMoviesToDisplay} moviesToDisplay={moviesToDisplay}/>
                             </>  

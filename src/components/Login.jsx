@@ -40,6 +40,7 @@ function Login({allUsers, setUser}){
     
     }else{
         return(
+            <div className='bg-layer'>
             <div className="login">
                 <form onSubmit={handleSubmit} >
                     <h1>Login</h1>
@@ -47,7 +48,10 @@ function Login({allUsers, setUser}){
                     <input type={"password"} name="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)}></input>
                     <input type={"submit"} value="Login"></input>
                 </form>
-                <Link to={"/createAccount"}>Dont have an account? Click here to create one!</Link>
+                <br></br>
+                <br></br>
+                <Link to={"/createAccount"} className="link">Dont have an account? Click here to create one!</Link>
+            </div>
             </div>
         )
     }
