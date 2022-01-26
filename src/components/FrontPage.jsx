@@ -33,8 +33,7 @@ function FrontPage(){
   if(userLoaded){
     return(
       <>
-        
-        <MovieContainer changeLoaded={changeLoaded} moviesLoaded={moviesLoaded} currentUser={currentUser} logout={logout} />
+        <MovieContainer changeLoaded={changeLoaded} moviesLoaded={moviesLoaded} currentUser={currentUser} logout={logout }/>
         
       </>
   )

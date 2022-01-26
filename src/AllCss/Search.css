@@ -29,6 +29,9 @@ nav {
   letter-spacing: 3px;
   list-style: none;
 }
+.nav-links:hover {
+  cursor: pointer;
+}
 
 .search {
   background-color: transparent;

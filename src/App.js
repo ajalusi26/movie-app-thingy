@@ -4,6 +4,7 @@ import './App.css';
 import Login from './components/Login';
 import CreateAccountPage from './components/CreateAccountPage';
 import FrontPage from './components/FrontPage'
+import MovieContainer from './components/MovieContainer';
 
 function App() {
   const [allUsers, setAllUsers] = useState([])
