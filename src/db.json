@@ -4,8 +4,13 @@
       "username": "OhhhhThatGuy",
       "password": "12345678",
       "email": "Ajalusi26@gmail.com",
-      "favorites": [],
-      "watchLater": [],
+      "favorites": [
+        "0109830",
+        "1375666"
+      ],
+      "watchLater": [
+        "0071562"
+      ],
       "id": 1
     }
   ],

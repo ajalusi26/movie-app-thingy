@@ -6,6 +6,9 @@ import Search from "./Search";
 import MovieTile from "./MovieTile";
 import '../AllCss/MovieContainer.css'
 import ChangePage from "./ChangePage";
+import DisplayMovies from "./DisplayMovies";
+import DisplayFavorites from "./DisplayFavorites";
+import DisplayWatchLater from "./DisplayWatchLater";
 
 function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
     // All States
@@ -35,25 +38,6 @@ function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
     const moviesWatchLater = movieData.filter(item => watchLater.includes(item.id))
 
 
-
-    
-
-  
-
-
-    
-    
-    
-    
-    
-            
-    
-
-    //get favorite + watchlater info
-    
-
-
-    
     if(moviesLoaded === true ){
                 switch (tab){
                     case 'all':
@@ -61,10 +45,7 @@ function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
                             <>
                                 <NavBar setTab={setTab} currentUser={currentUser} logout={logout} setMoviesToDisplay={setMoviesToDisplay}/>
                                 <Search setSearchValue={setSearchValue}/>
-                                <div className="movie-container">
-                                    {filteredMovies.slice(moviesToDisplay, moviesToDisplay + 48)
-                                    .map(movie => <MovieTile movie={movie} key={movie.id} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} setWatchLater={setWatchLater} watchLater={watchLater}/>)}               
-                                </div>
+                                <DisplayMovies filteredMovies={filteredMovies} moviesToDisplay={moviesToDisplay} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} watchLater={watchLater} setWatchLater={setWatchLater} tab={tab}/>
                                 <ChangePage setMoviesToDisplay={setMoviesToDisplay} moviesToDisplay={moviesToDisplay}/>
                             </>  
                         )
@@ -72,11 +53,7 @@ function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
                         return(
                             <>
                                 <NavBar setTab={setTab} currentUser={currentUser} logout={logout} setMoviesToDisplay={setMoviesToDisplay}/>
-                                <div className="movie-container">
-                                {favoriteMovies.slice(moviesToDisplay, moviesToDisplay + 48)
-                                    .map(movie => <MovieTile movie={movie} key={movie.id} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} setWatchLater={setWatchLater} watchLater={watchLater}/>)}
-                                    {console.log(favoriteMovies)}
-                                </div>
+                               <DisplayFavorites favoriteMovies={favoriteMovies} moviesToDisplay={moviesToDisplay} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} watchLater={watchLater} setWatchLater={setWatchLater} tab={tab}/>
                                 
                             </>
                         )
@@ -84,11 +61,7 @@ function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
                         return(
                             <>
                                <NavBar setTab={setTab} currentUser={currentUser} logout={logout} setMoviesToDisplay={setMoviesToDisplay}/>
-                                <div className="movie-container">
-                                {moviesWatchLater.slice(moviesToDisplay, moviesToDisplay + 48)
-                                    .map(movie => <MovieTile movie={movie} key={movie.id} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} setWatchLater={setWatchLater} watchLater={watchLater}/>)}
-                                    {console.log(favoriteMovies)}
-                                </div>
+                                <DisplayWatchLater moviesWatchLater={moviesWatchLater} moviesToDisplay={moviesToDisplay} currentUser={currentUser} favorites={favorites} setFavorites={setFavorites} watchLater={watchLater} setWatchLater={setWatchLater} tab={tab}/>
                             </>
                         )
                 }
