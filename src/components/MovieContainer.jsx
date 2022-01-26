@@ -27,11 +27,18 @@ function MovieContainer({changeLoaded, moviesLoaded, currentUser, logout}){
 
     // Makes the movies displayed == to the search/tab chosen
    
+
     const filteredMovies = movieData.filter(item => item.Name.toLowerCase().includes(searchValue.toLowerCase()))
 
     const favoriteMovies = movieData.filter(item => favorites.includes(item.id))
 
     const moviesWatchLater = movieData.filter(item => watchLater.includes(item.id))
+
+
+
+    
+
+  
 
 
     

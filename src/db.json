@@ -1,5 +1,14 @@
 {
-  "users": [],
+  "users": [
+    {
+      "username": "OhhhhThatGuy",
+      "password": "12345678",
+      "email": "Ajalusi26@gmail.com",
+      "favorites": [],
+      "watchLater": [],
+      "id": 1
+    }
+  ],
   "movies": [
     {
       "id": "0111161",
