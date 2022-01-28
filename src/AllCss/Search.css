@@ -50,3 +50,7 @@ nav {
   color: #ffffff;
   text-align: center;
 }
+.search:hover {
+  border: 3px solid white;
+  padding: 0.5rem 2rem;
+}
