@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 //import components + css
 import NavBar from "./NavBar";
 import Search from "./Search";
-import MovieTile from "./MovieTile";
 import '../AllCss/MovieContainer.css'
 import ChangePage from "./ChangePage";
 import DisplayMovies from "./DisplayMovies";

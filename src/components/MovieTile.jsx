@@ -2,6 +2,8 @@ import React,{useState, useEffect} from "react";
 import '../AllCss/MovieTile.css'
 function MovieTile({movie, currentUser, favorites, setFavorites, watchLater, setWatchLater, tab}){
 
+    const [showButtons, setShowButtons] = useState(false)
+
     function addFavorite(e){
         const isDuplicate = favorites.filter(item => item == e.target.id)
         if(isDuplicate.length > 0){
@@ -78,50 +80,67 @@ function MovieTile({movie, currentUser, favorites, setFavorites, watchLater, set
 
     }
 
+    
     switch (tab){
         case 'all':
             return(
-                <div className="tile">
-                    <img src={movie.imgUrl}></img>
-                    <p className="title">{movie.Name}</p>
-                    <span>
-                        <button id={movie.id} onClick={addFavorite}>Add to Favorites</button>
-                        <button id={movie.id} onClick={addWatchLater}>Watch Later</button>
-                    </span>
+                <div className="tile" onMouseEnter={() => setShowButtons(!showButtons)} onMouseLeave={() => setShowButtons(!showButtons)}>
+                    <img  src={movie.imgUrl}></img>
+                    <p className="title">{movie.Name}</p>    
+                    {showButtons ?  <span style={{display: "flex"}}>
+                        <button id={movie.id} onClick={addFavorite} className="tile-button">Add to Favorites</button>
+                        <button id={movie.id} onClick={addWatchLater} className="tile-button">Watch Later</button>
+                    </span>: <span style={{display: "none"}}>
+                        <button id={movie.id} onClick={addFavorite} className="tile-button">Add to Favorites</button>
+                        <button id={movie.id} onClick={addWatchLater} className="tile-button">Watch Later</button>
+                    </span>}    
+                   
                 </div>
             )
         case 'favorites':
             return(
-                <div className="tile">
-                    <img src={movie.imgUrl}></img>
+                <div className="tile" onMouseEnter={() => setShowButtons(!showButtons)} onMouseLeave={() => setShowButtons(!showButtons)}>
+                    <img  src={movie.imgUrl}></img>
                     <p className="title">{movie.Name}</p>
-                    <span>
+                    {showButtons ? <span style={{display: "block"}}>
                         <button id={movie.id} onClick={removeFromFavorites}>Remove From Favorites</button>
                         <button id={movie.id} onClick={addWatchLater}>Watch Later</button>
-                    </span>
+                    </span> : <span style={{display: "none"}}>
+                        <button id={movie.id} onClick={removeFromFavorites}>Remove From Favorites</button>
+                        <button id={movie.id} onClick={addWatchLater}>Watch Later</button>
+                    </span>}
+                    
                 </div>
             )
         case 'watch-later': 
             return(
-                <div className="tile">
+                <div className="tile" onMouseEnter={() => setShowButtons(!showButtons)} onMouseLeave={() => setShowButtons(!showButtons)}>
                     <img src={movie.imgUrl}></img>
                     <p className="title">{movie.Name}</p>
-                    <span>
+                    {showButtons ?  <span style={{display: "block"}}>
                         <button id={movie.id} onClick={addFavorite}>Add to Favorites</button>
                         <button id={movie.id} onClick={removeWatchLater}>Remove From Watch Later</button>
-                    </span>
+                    </span>:  <span style={{display: "none"}}>
+                        <button id={movie.id} onClick={addFavorite}>Add to Favorites</button>
+                        <button id={movie.id} onClick={removeWatchLater}>Remove From Watch Later</button>
+                    </span>}
+                   
                 </div>
             )
         default: 
         return(
-            <div className="tile">
-                <img src={movie.imgUrl}></img>
-                <p className="title">{movie.Name}</p>
-                <span>
-                    <button id={movie.id} onClick={addFavorite}>Add to Favorites</button>
-                    <button id={movie.id} onClick={addWatchLater}>Watch Later</button>
-                </span>
-            </div>
+            <div className="tile" onMouseEnter={() => setShowButtons(!showButtons)} onMouseLeave={() => setShowButtons(!showButtons)}>
+                    <img  src={movie.imgUrl}></img>
+                    <p className="title">{movie.Name}</p>    
+                    {showButtons ?  <span style={{display: "block"}}>
+                        <button id={movie.id} onClick={addFavorite} className="tile-button">Add to Favorites</button>
+                        <button id={movie.id} onClick={addWatchLater} className="tile-button">Watch Later</button>
+                    </span>: <span style={{display: "none"}}>
+                        <button id={movie.id} onClick={addFavorite} className="tile-button">Add to Favorites</button>
+                        <button id={movie.id} onClick={addWatchLater} className="tile-button">Watch Later</button>
+                    </span>}    
+                   
+                </div>
         )
 
     }

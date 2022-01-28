@@ -5,28 +5,29 @@
       "password": "12345678",
       "email": "Ajalusi26@gmail.com",
       "favorites": [
-        "0111161",
-        "0068646",
         "0071562",
-        "0468569",
-        "0050083",
-        "0108052"
+        "0110912",
+        "0167260",
+        "0111161"
       ],
       "watchLater": [
-        "0068646",
-        "0080684",
-        "0060196",
-        "0109830",
-        "1375666"
+        "0111161",
+        "0137523",
+        "0468569"
       ],
       "id": 1
     },
     {
-      "username": "randomuser",
+      "username": "personguy",
       "password": "12345678",
       "email": "Ajalusi26@gmail.com",
-      "favorites": [],
-      "watchLater": [],
+      "favorites": [
+        "0110912",
+        "0060196"
+      ],
+      "watchLater": [
+        "0167260"
+      ],
       "id": 2
     }
   ],
