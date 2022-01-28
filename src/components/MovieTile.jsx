@@ -118,8 +118,8 @@ function MovieTile({movie, currentUser, favorites, setFavorites, watchLater, set
                     <img src={movie.imgUrl}></img>
                     <p className="title">{movie.Name}</p>
                     {showButtons ?  <span style={{display: "block"}}>
-                        <button id={movie.id} onClick={addFavorite}>Add to Favorites</button>
                         <button id={movie.id} onClick={removeWatchLater}>Remove From Watch Later</button>
+                        <button id={movie.id} onClick={addFavorite}>Add to Favorites</button>
                     </span>:  <span style={{display: "none"}}>
                         <button id={movie.id} onClick={addFavorite}>Add to Favorites</button>
                         <button id={movie.id} onClick={removeWatchLater}>Remove From Watch Later</button>

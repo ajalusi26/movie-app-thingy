@@ -30,6 +30,9 @@ nav {
   letter-spacing: 3px;
   list-style: none;
 }
+.nav-links li:hover {
+  font-weight: 700;
+}
 
 .nav-links:hover {
   cursor: pointer;
